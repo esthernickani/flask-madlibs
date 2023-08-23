@@ -8,16 +8,10 @@
 <body>
     <h1>Madlibs</h1>
     <form action="/story" class="madlibs_form">
-        <label for="place">Place</label>
-        <input type="text" name="place" id="place" required>
-        <label for="noun">Noun</label>
-        <input type="text" name="noun" id="noun" required>
-        <label for="verb">Verb</label>
-        <input type="text" name="verb" id="verb" required>
-        <label for="adjective">Adjective</label>
-        <input type="text" name="adjective" id="adjective" required>
-        <label for="plural_noun">Plural_noun</label>
-        <input type="text" name="plural_noun" id="plural_noun" required>
+        {%for prompt in prompts%}
+            <label for="{{prompt}}">{{prompt}}</label>
+            <input type="text" name="{{prompt}}" id="{{prompt}}" required>
+        {% endfor %}
         <input type="submit" value="submit">
     </form>
     
